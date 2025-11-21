@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation
+  useLocation,
+  Navigate
 } from 'react-router-dom';
 
 import Navigation from './components/Navigation';
@@ -12,11 +13,23 @@ import Home2 from './pages/Home2';
 import About from './pages/About';
 import Destinations from './pages/Destinations';
 import Contact from './pages/Contact';
-import Signup from './pages/signup';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+
+function ProtectedRoute({ children }) {
+  const isAuthenticated = Boolean(localStorage.getItem('token'));
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+}
 
 function AppRoutes() {
   const location = useLocation();
-  const showNavigation = location.pathname !== '/signup';
+  const hideNavigationPaths = ['/signup', '/login'];
+  const showNavigation = !hideNavigationPaths.includes(location.pathname);
 
   return (
     <>
@@ -24,11 +37,19 @@ function AppRoutes() {
       <div className={showNavigation ? 'pt-16' : ''}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/home2" element={<Home2 />} />
+          <Route
+            path="/home2"
+            element={
+              <ProtectedRoute>
+                <Home2 />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </>
