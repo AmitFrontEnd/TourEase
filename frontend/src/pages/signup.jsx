@@ -104,26 +104,26 @@ export default function Signup() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center px-4">
-
+    <div className="min-h-screen w-full bg-gray-50 dark:bg-gray-950 flex items-center justify-center px-4">
       {/* MAIN CARD */}
-      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl">
-
+      <div className="w-full max-w-md bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-xl dark:shadow-2xl border border-transparent dark:border-gray-800">
         {/* LOGO */}
         <Link to="/" className="block mb-6">
-          <h1 className="text-3xl font-bold text-teal-600">TourEase</h1>
+          <h1 className="text-3xl font-bold text-teal-600 dark:text-indigo-400">
+            TourEase
+          </h1>
         </Link>
 
         {/* HEADER */}
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
           Create your account
         </h2>
 
-        <p className="text-sm text-gray-600 mb-6">
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-6">
           Already have an account?{" "}
           <Link
             to="/login"
-            className="text-blue-600 hover:text-blue-700 font-medium"
+            className="text-blue-600 dark:text-indigo-400 hover:text-blue-700 dark:hover:text-indigo-300 font-medium transition"
           >
             Sign in
           </Link>
@@ -131,18 +131,20 @@ export default function Signup() {
 
         {/* SUCCESS */}
         {success && (
-          <div className="mb-6 bg-green-50 border border-green-200 rounded-lg p-4">
-            <p className="text-green-800 font-medium">
+          <div className="mb-6 bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-900 rounded-lg p-4">
+            <p className="text-green-800 dark:text-green-300 font-medium">
               Account created successfully!
             </p>
-            <p className="text-xs text-green-600 mt-1">Redirecting...</p>
+            <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+              Redirecting...
+            </p>
           </div>
         )}
 
         {/* SUBMIT ERROR */}
         {errors.submit && (
-          <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
-            <p className="text-sm font-medium text-red-800">
+          <div className="mb-6 bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-900 rounded-lg p-4">
+            <p className="text-sm font-medium text-red-800 dark:text-red-300">
               {errors.submit}
             </p>
           </div>
@@ -150,89 +152,106 @@ export default function Signup() {
 
         {/* FORM */}
         <form onSubmit={handleSubmit} className="space-y-5">
-
           {/* NAME */}
           <div>
-            <label className="block text-sm font-medium mb-1">Full Name</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
+              Full Name
+            </label>
             <div className="relative">
-              <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <User className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-400" />
               <input
                 type="text"
                 name="name"
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-3 py-3 border rounded-lg ${
-                  errors.name ? "border-red-300 bg-red-50" : "border-gray-300"
+                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
+                  errors.name
+                    ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
+                    : "border-gray-300 dark:border-gray-700"
                 }`}
                 placeholder="John Doe"
               />
             </div>
             {errors.name && (
-              <p className="text-red-600 text-sm mt-1">{errors.name}</p>
+              <p className="text-red-600 dark:text-red-300 text-sm mt-1">
+                {errors.name}
+              </p>
             )}
           </div>
 
           {/* EMAIL */}
           <div>
-            <label className="block text-sm font-medium mb-1">Email Address</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
+              Email Address
+            </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-400" />
               <input
                 type="email"
                 name="email"
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-3 py-3 border rounded-lg ${
-                  errors.email ? "border-red-300 bg-red-50" : "border-gray-300"
+                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
+                  errors.email
+                    ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
+                    : "border-gray-300 dark:border-gray-700"
                 }`}
                 placeholder="you@example.com"
               />
             </div>
             {errors.email && (
-              <p className="text-red-600 text-sm mt-1">{errors.email}</p>
+              <p className="text-red-600 dark:text-red-300 text-sm mt-1">
+                {errors.email}
+              </p>
             )}
           </div>
 
           {/* PHONE */}
           <div>
-            <label className="block text-sm font-medium mb-1">
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
               Phone <span className="text-gray-400">(Optional)</span>
             </label>
             <div className="relative">
-              <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <Phone className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-400" />
               <input
                 type="tel"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-3 py-3 border rounded-lg ${
-                  errors.phone ? "border-red-300 bg-red-50" : "border-gray-300"
+                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
+                  errors.phone
+                    ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
+                    : "border-gray-300 dark:border-gray-700"
                 }`}
                 placeholder="+1 (555) 123-4567"
               />
             </div>
             {errors.phone && (
-              <p className="text-red-600 text-sm mt-1">{errors.phone}</p>
+              <p className="text-red-600 dark:text-red-300 text-sm mt-1">
+                {errors.phone}
+              </p>
             )}
           </div>
 
           {/* PASSWORD */}
           <div>
-            <label className="block text-sm font-medium mb-1">Password</label>
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
+              Password
+            </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-400" />
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
                 required
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-10 py-3 border rounded-lg ${
+                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
                   errors.password
-                    ? "border-red-300 bg-red-50"
-                    : "border-gray-300"
+                    ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
+                    : "border-gray-300 dark:border-gray-700"
                 }`}
                 placeholder="••••••••"
               />
@@ -242,34 +261,36 @@ export default function Signup() {
                 className="absolute right-3 top-3"
               >
                 {showPassword ? (
-                  <EyeOff className="h-5 w-5 text-gray-400" />
+                  <EyeOff className="h-5 w-5 text-gray-400 dark:text-gray-400" />
                 ) : (
-                  <Eye className="h-5 w-5 text-gray-400" />
+                  <Eye className="h-5 w-5 text-gray-400 dark:text-gray-400" />
                 )}
               </button>
             </div>
             {errors.password && (
-              <p className="text-red-600 text-sm mt-1">{errors.password}</p>
+              <p className="text-red-600 dark:text-red-300 text-sm mt-1">
+                {errors.password}
+              </p>
             )}
           </div>
 
           {/* CONFIRM PASSWORD */}
           <div>
-            <label className="block text-sm font-medium mb-1">
+            <label className="block text-sm font-medium mb-1 text-gray-900 dark:text-white">
               Confirm Password
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+              <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-400" />
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
                 required
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-10 py-3 border rounded-lg ${
+                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
                   errors.confirmPassword
-                    ? "border-red-300 bg-red-50"
-                    : "border-gray-300"
+                    ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
+                    : "border-gray-300 dark:border-gray-700"
                 }`}
                 placeholder="••••••••"
               />
@@ -279,14 +300,14 @@ export default function Signup() {
                 className="absolute right-3 top-3"
               >
                 {showConfirmPassword ? (
-                  <EyeOff className="h-5 w-5 text-gray-400" />
+                  <EyeOff className="h-5 w-5 text-gray-400 dark:text-gray-400" />
                 ) : (
-                  <Eye className="h-5 w-5 text-gray-400" />
+                  <Eye className="h-5 w-5 text-gray-400 dark:text-gray-400" />
                 )}
               </button>
             </div>
             {errors.confirmPassword && (
-              <p className="text-red-600 text-sm mt-1">
+              <p className="text-red-600 dark:text-red-300 text-sm mt-1">
                 {errors.confirmPassword}
               </p>
             )}
@@ -296,15 +317,20 @@ export default function Signup() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 text-white py-3 rounded-lg font-semibold shadow hover:shadow-lg transition disabled:opacity-50"
+            className="w-full bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-indigo-600 dark:to-purple-600 hover:from-teal-600 hover:to-cyan-700 dark:hover:from-indigo-500 dark:hover:to-purple-500 text-white py-3 rounded-lg font-semibold shadow hover:shadow-lg transition disabled:opacity-50"
           >
             {loading ? "Creating Account..." : "Create Account"}
           </button>
 
-          <p className="text-center text-xs text-gray-500 mt-6">
+          <p className="text-center text-xs text-gray-500 dark:text-gray-400 mt-6">
             By signing up, you agree to our{" "}
-            <Link className="text-blue-600">Terms</Link> &{" "}
-            <Link className="text-blue-600">Privacy Policy</Link>
+            <Link className="text-blue-600 dark:text-indigo-400 hover:text-blue-700 dark:hover:text-indigo-300 transition">
+              Terms
+            </Link>{" "}
+            &{" "}
+            <Link className="text-blue-600 dark:text-indigo-400 hover:text-blue-700 dark:hover:text-indigo-300 transition">
+              Privacy Policy
+            </Link>
           </p>
         </form>
       </div>
