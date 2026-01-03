@@ -4,140 +4,191 @@ import { Globe, Shield, Smartphone, Video, Calendar, Headphones, Users, MapPin, 
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-teal-400 via-teal-500 to-cyan-600 dark:from-purple-700 dark:via-indigo-700 dark:to-purple-800 text-white overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
+    <div className="min-h-screen bg-white font-sans">
+      {/* Hero Section */}
+      <div className="relative min-h-screen w-full bg-[#030712] overflow-hidden flex items-center py-12 lg:py-0">
+        
+        {/* Background Glows */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-500/10 blur-[100px] rounded-full"></div>
+          <div className="absolute bottom-[-5%] right-[-5%] w-[40%] h-[40%] bg-orange-500/5 blur-[100px] rounded-full"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
-          <div className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold mb-6">
-            Explore the World!
-          </div>
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full z-10">
+          {/* Grid Layout: Mobile par stacked (col), Desktop par side-by-side (row) */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
+            
+            {/* 1. LEFT SIDE: Content (Mobile par upar aayega) */}
+            <div className="space-y-6 text-left animate-in fade-in slide-in-from-left duration-700 order-1">
+              
+              {/* Badge */}
+              <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 backdrop-blur-xl px-4 py-1.5 rounded-full">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                </span>
+                <span className="text-orange-400 text-[10px] font-bold uppercase tracking-[0.2em]">Explore the World!</span>
+              </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white dark:text-white">
-            Your Smart Travel<br />Assistant Awaits
-          </h1>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+                Your Smart Travel<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-400 to-cyan-500">
+                  Assistant Awaits
+                </span>
+              </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl opacity-90 text-white dark:text-gray-100">
-            Plan smarter, travel better! Whether you're exploring nearby or venturing abroad,
-            our intelligent assistant has everything covered — from itineraries to bookings,
-            all in one place.
-          </p>
+              <p className="text-base md:text-lg text-gray-400 max-w-md leading-relaxed font-medium">
+                Plan smarter, travel better! Whether you're exploring nearby or venturing abroad, 
+                our intelligent assistant has everything covered — from itineraries to bookings, 
+                all in one place.
+              </p>
 
-          <div className="flex flex-wrap gap-4 mb-12">
-            <Link
-              to="/signup"
-              className="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-500 text-white px-10 py-4 rounded-lg font-semibold transition text-lg"
-            >
-              Start Your Journey
-            </Link>
-            <Link
-              to="/features"
-              className="bg-white dark:bg-gray-900 text-teal-600 dark:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-10 py-4 rounded-lg font-semibold transition text-lg border border-transparent dark:border-gray-800"
-            >
-              Explore Features
-            </Link>
-          </div>
+              {/* Buttons Section */}
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  to="/signup" 
+                  className="px-8 py-3.5 bg-orange-600 hover:bg-orange-500 text-white rounded-xl font-bold transition-all duration-300 shadow-lg shadow-orange-900/20 active:scale-95 text-md flex items-center justify-center min-w-[180px]"
+                >
+                  Start Your Journey
+                </Link>
+                
+                <Link 
+                  to="/explore" 
+                  className="px-8 py-3.5 bg-white/5 border border-white/10 backdrop-blur-md text-white hover:bg-white/10 rounded-xl font-bold transition-all duration-300 active:scale-95 text-md flex items-center justify-center min-w-[180px]"
+                >
+                  Explore Features
+                </Link>
+              </div>
 
-          <div className="grid grid-cols-3 gap-8 max-w-3xl">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-white dark:text-white">50K+</div>
-              <div className="text-base opacity-80 text-white dark:text-gray-200">Happy Travelers</div>
+              {/* Compact Stats */}
+              <div className="flex items-center gap-8 pt-4">
+                <div>
+                  <p className="text-3xl font-black text-white">50K<span className="text-orange-500">+</span></p>
+                  <p className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Adventurers</p>
+                </div>
+                <div className="h-8 w-[1px] bg-white/10"></div>
+                <div>
+                  <p className="text-3xl font-black text-white">150<span className="text-teal-400">+</span></p>
+                  <p className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Destinations</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-white dark:text-white">150+</div>
-              <div className="text-base opacity-80 text-white dark:text-gray-200">Destinations</div>
+
+            {/* 2. RIGHT SIDE: Visual Image (Mobile par content ke niche aayega) */}
+            <div className="relative order-2 lg:order-2 w-full flex justify-center lg:justify-end">
+              <div className="relative z-20 animate-float-slow max-w-[420px] lg:max-w-[480px] w-full">
+                 <div className="rounded-[2.5rem] p-2 bg-white/5 border border-white/10 backdrop-blur-sm shadow-2xl overflow-hidden">
+                    <div className="rounded-[2rem] overflow-hidden relative group">
+                      <img 
+                        src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop" 
+                        alt="Luxury Tourism" 
+                        className="w-full h-[300px] md:h-[380px] lg:h-[480px] object-cover transition-transform duration-[3s] group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/70 via-transparent to-transparent"></div>
+                      
+                      <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-xl px-4 py-2 rounded-2xl border border-white/20 shadow-xl">
+                         <div className="flex items-center gap-2">
+                            <span className="text-teal-400">✦</span>
+                            <p className="text-white text-[10px] font-bold uppercase tracking-wider">Top Rated Experience</p>
+                         </div>
+                      </div>
+                    </div>
+                 </div>
+              </div>
             </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-white dark:text-white">24/7</div>
-              <div className="text-base opacity-80 text-white dark:text-gray-200">Support</div>
-            </div>
+
           </div>
         </div>
+
+        <style>{`
+          @keyframes float-slow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+          }
+          .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        `}</style>
       </div>
+    </div>
+
 
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
           Everything You Need to Travel<br />Smart
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-300 text-lg mb-16 max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
           Your all-in-one travel companion powered by smart features designed to simplify every step of your journey
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Feature Cards */}
           <FeatureCard
             icon={<Globe className="w-10 h-10" />}
             title="AI Travel Planner"
             description="Smart itinerary builder tailored to your interests, budget, and time. Get personalized recommendations instantly."
-            color="bg-blue-100 text-blue-600 dark:bg-blue-950 dark:text-blue-300"
+            color="bg-blue-100 text-blue-600"
           />
 
           <FeatureCard
             icon={<Shield className="w-10 h-10" />}
             title="Local Advice & Support"
             description="Get real-time tips from locals and travelers. Know what to do, where to go, and what to avoid."
-            color="bg-teal-100 text-teal-600 dark:bg-indigo-950 dark:text-indigo-300"
+            color="bg-teal-100 text-teal-600"
           />
 
           <FeatureCard
             icon={<Smartphone className="w-10 h-10" />}
             title="Smart Accommodation"
             description="Find the perfect stay with AI-driven suggestions based on reviews, location, and price."
-            color="bg-purple-100 text-purple-600 dark:bg-purple-950 dark:text-purple-300"
+            color="bg-purple-100 text-purple-600"
           />
 
           <FeatureCard
             icon={<Video className="w-10 h-10" />}
             title="Online Translation"
             description="Break language barriers with instant AI-powered translation for over 100 languages."
-            color="bg-green-100 text-green-600 dark:bg-green-950 dark:text-green-300"
+            color="bg-green-100 text-green-600"
           />
 
           <FeatureCard
             icon={<Calendar className="w-10 h-10" />}
             title="Offline Accessibility"
             description="Access your itinerary, maps & guides without internet. Travel worry-free anywhere."
-            color="bg-orange-100 text-orange-600 dark:bg-orange-950 dark:text-orange-300"
+            color="bg-orange-100 text-orange-600"
           />
 
           <FeatureCard
             icon={<Headphones className="w-10 h-10" />}
             title="24/7 Live Support"
             description="Get instant help anytime, anywhere. Our travel experts are always ready to assist you."
-            color="bg-pink-100 text-pink-600 dark:bg-pink-950 dark:text-pink-300"
+            color="bg-pink-100 text-pink-600"
           />
 
           <FeatureCard
             icon={<Users className="w-10 h-10" />}
             title="Group Trip Planner"
             description="Coordinate with friends easily. Share itineraries, split costs, and vote on activities."
-            color="bg-indigo-100 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-300"
+            color="bg-indigo-100 text-indigo-600"
           />
 
           <FeatureCard
             icon={<DollarSign className="w-10 h-10" />}
             title="Budget Tracker"
             description="Stay on budget with smart expense tracking and cost predictions for your entire trip."
-            color="bg-yellow-100 text-yellow-600 dark:bg-yellow-950 dark:text-yellow-300"
+            color="bg-yellow-100 text-yellow-600"
           />
         </div>
       </div>
 
       {/* How It Works Section */}
-      <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-gray-900 dark:to-gray-950 py-20">
+      <div className="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-            How <span className="text-teal-600 dark:text-indigo-400">TourEase</span> Works
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+            How <span className="text-teal-600">TourEase</span> Works
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-300 text-lg mb-16">
+          <p className="text-center text-gray-600 text-lg mb-16">
             Four simple steps to planning your perfect trip with AI assistance
           </p>
 
@@ -147,7 +198,7 @@ export default function Home() {
               icon={<MapPin className="w-8 h-8" />}
               title="Tell Us Your Destination"
               description="Simply enter where you want to go and when. Our AI understands your preferences."
-              color="bg-teal-500 dark:bg-indigo-600"
+              color="bg-teal-500"
             />
 
             <StepCard
@@ -155,7 +206,7 @@ export default function Home() {
               icon={<Star className="w-8 h-8" />}
               title="Get Personalized Suggestions"
               description="Receive custom itineraries based on your interests, budget, and travel style."
-              color="bg-orange-500 dark:bg-orange-600"
+              color="bg-orange-500"
             />
 
             <StepCard
@@ -163,7 +214,7 @@ export default function Home() {
               icon={<Clock className="w-8 h-8" />}
               title="Travel with Confidence"
               description="Access your plans offline, get real-time updates, and enjoy 24/7 support."
-              color="bg-teal-500 dark:bg-indigo-600"
+              color="bg-teal-500"
             />
 
             <StepCard
@@ -171,7 +222,7 @@ export default function Home() {
               icon={<Award className="w-8 h-8" />}
               title="Share Your Story"
               description="Document memories, share tips with community, and earn rewards for contributions."
-              color="bg-orange-500 dark:bg-orange-600"
+              color="bg-orange-500"
             />
           </div>
         </div>
@@ -179,10 +230,10 @@ export default function Home() {
 
       {/* Community Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900 dark:text-white">
-          Join Our Global Travel <span className="text-teal-600 dark:text-indigo-400">Community</span>
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+          Join Our Global Travel <span className="text-teal-600">Community</span>
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-300 text-lg mb-16 max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
           Connect with fellow travelers, share experiences, and get inspired for your next adventure
         </p>
 
@@ -210,15 +261,15 @@ export default function Home() {
         </div>
 
         <div className="relative h-80 rounded-2xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-500 dark:from-purple-700 dark:to-indigo-700 opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-cyan-500 opacity-90"></div>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white px-4">
               <Users className="w-20 h-20 mx-auto mb-6 opacity-80" />
-              <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white dark:text-white">Join 50,000+ Travelers</h3>
-              <p className="text-lg mb-6 opacity-90 text-white dark:text-gray-100">Start your journey with the smartest travel assistant</p>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">Join 50,000+ Travelers</h3>
+              <p className="text-lg mb-6 opacity-90">Start your journey with the smartest travel assistant</p>
               <Link
                 to="/signup"
-                className="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-500 text-white px-10 py-4 rounded-lg font-semibold transition text-lg inline-block"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-semibold transition text-lg inline-block"
               >
                 Get Started Free
               </Link>
@@ -228,130 +279,135 @@ export default function Home() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-br from-teal-400 via-teal-500 to-cyan-600 dark:from-purple-700 dark:via-indigo-700 dark:to-purple-800 text-white py-20">
+      <div className="bg-gradient-to-br from-teal-400 via-teal-500 to-cyan-600 text-white py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold mb-6">
             Ready to Explore the World?
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white dark:text-white">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Ready to Experience Travel<br />Like Never Before?
           </h2>
 
-          <p className="text-xl mb-10 opacity-90 text-white dark:text-gray-100">
+          <p className="text-xl mb-10 opacity-90">
             Join thousands of smart travelers who plan better and explore more with TourEase
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Link
               to="/signup"
-              className="bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-500 text-white px-10 py-4 rounded-lg font-semibold transition text-lg"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-semibold transition text-lg"
             >
               Get Started Free
             </Link>
-            <button className="bg-white dark:bg-gray-900 text-teal-600 dark:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800 px-10 py-4 rounded-lg font-semibold transition text-lg border border-transparent dark:border-gray-800">
+            <button className="bg-white text-teal-600 hover:bg-gray-100 px-10 py-4 rounded-lg font-semibold transition text-lg">
               Watch Demo
             </button>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-white dark:text-white">Free</div>
-              <div className="text-base opacity-80 text-white dark:text-gray-200">Forever Plan</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">Free</div>
+              <div className="text-base opacity-80">Forever Plan</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold mb-2">5 Min</div>
+              <div className="text-base opacity-80">Setup Time</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-white dark:text-white">5 Min</div>
-              <div className="text-base opacity-80 text-white dark:text-gray-200">Setup Time</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">4.9★</div>
+              <div className="text-base opacity-80">User Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-white dark:text-white">4.9★</div>
-              <div className="text-base opacity-80 text-white dark:text-gray-200">User Rating</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold mb-2 text-white dark:text-white">150+</div>
-              <div className="text-base opacity-80 text-white dark:text-gray-200">Countries</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">150+</div>
+              <div className="text-base opacity-80">Countries</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#0b1120] dark:bg-[#050814] text-gray-400 py-16 relative overflow-hidden">
+    <footer className="bg-[#0b1120] text-gray-400 py-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-orange-500/40 to-transparent"></div>
-
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+            
             <div className="lg:col-span-4 space-y-6">
-              <h3 className="text-white dark:text-white font-bold text-3xl tracking-tight">
-                Tour<span className="text-teal-400 dark:text-indigo-400">Ease</span>
-              </h3>
-              <p className="text-sm leading-relaxed max-w-xs text-gray-400 dark:text-gray-400">
-                Your smart travel companion for unforgettable adventures around the world.
-              </p>
+              <h3 className="text-white font-bold text-3xl tracking-tight">Tour<span className="text-teal-400">Ease</span></h3>
+              <p className="text-sm text-gray-400 max-w-xs">Smart travel companion for unforgettable adventures.</p>
               <div className="space-y-2 text-sm">
-                <p className="text-gray-300 dark:text-gray-200 font-medium">support@tourease.com</p>
-                <p className="text-gray-500 dark:text-gray-500 text-xs uppercase tracking-widest">San Francisco, CA, USA</p>
+                <p className="text-gray-300 font-medium">support@tourease.com</p>
+                <p className="text-gray-500 text-xs uppercase tracking-widest">San Francisco, CA, USA</p>
               </div>
             </div>
 
             <div className="lg:col-span-5 grid grid-cols-3 gap-4">
+              {/* Product Column */}
               <div>
-                <h4 className="text-white dark:text-white font-bold mb-7 text-[12px] uppercase tracking-[0.2em]">Product</h4>
+                <h4 className="text-white font-bold mb-7 text-[12px] uppercase tracking-[0.2em]">Product</h4>
                 <ul className="space-y-4">
-                  {['Features', 'Pricing', 'Reviews'].map((item) => (
-                    <li key={item} className="group flex items-center">
-                      <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300"></span>
-                      <a href="#" className="text-sm group-hover:text-teal-400 dark:group-hover:text-indigo-400 group-hover:translate-x-1 transform transition-all duration-300">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
+                  <li className="group flex items-center">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 transition-all"></span>
+                    <a href="#features" className="text-sm group-hover:text-teal-400 transition-all">Features</a>
+                  </li>
+                  <li className="group flex items-center">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 transition-all"></span>
+                    <a href="#process" className="text-sm group-hover:text-teal-400 transition-all">Process</a>
+                  </li>
+                  <li className="group flex items-center">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 transition-all"></span>
+                    <a href="#reviews" className="text-sm group-hover:text-teal-400 transition-all">Reviews</a>
+                  </li>
                 </ul>
               </div>
 
+              {/* Company Column */}
               <div>
-                <h4 className="text-white dark:text-white font-bold mb-7 text-[12px] uppercase tracking-[0.2em]">Company</h4>
+                <h4 className="text-white font-bold mb-7 text-[12px] uppercase tracking-[0.2em]">Company</h4>
                 <ul className="space-y-4">
-                  {['About Us', 'Careers', 'Contact'].map((item) => (
-                    <li key={item} className="group flex items-center">
-                      <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300"></span>
-                      <a href="#" className="text-sm group-hover:text-teal-400 dark:group-hover:text-indigo-400 group-hover:translate-x-1 transform transition-all duration-300">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
+                  <li className="group flex items-center">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 transition-all"></span>
+                    <Link to="/about" className="text-sm group-hover:text-teal-400 transition-all">About Us</Link>
+                  </li>
+                  <li className="group flex items-center">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 transition-all"></span>
+                    <Link to="/contact" className="text-sm group-hover:text-teal-400 transition-all">Contact</Link>
+                  </li>
                 </ul>
               </div>
 
+              {/* Support Column */}
               <div>
-                <h4 className="text-white dark:text-white font-bold mb-7 text-[12px] uppercase tracking-[0.2em]">Support</h4>
+                <h4 className="text-white font-bold mb-7 text-[12px] uppercase tracking-[0.2em]">Support</h4>
                 <ul className="space-y-4">
-                  {['Help Center', 'Terms', 'Privacy'].map((item) => (
-                    <li key={item} className="group flex items-center">
-                      <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 group-hover:scale-125 transition-all duration-300"></span>
-                      <a href="#" className="text-sm group-hover:text-teal-400 dark:group-hover:text-indigo-400 group-hover:translate-x-1 transform transition-all duration-300">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
+                  <li className="group flex items-center">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 transition-all"></span>
+                    <Link to="/privacy" className="text-sm group-hover:text-teal-400 transition-all">Privacy</Link>
+                  </li>
+                  <li className="group flex items-center">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500 mr-3 opacity-70 group-hover:opacity-100 transition-all"></span>
+                    <Link to="/terms" className="text-sm group-hover:text-teal-400 transition-all">Terms</Link>
+                  </li>
                 </ul>
               </div>
             </div>
 
+            {/* Newsletter Section - Fixed Redirect to /signup */}
             <div className="lg:col-span-3 space-y-6">
-              <h4 className="text-white dark:text-white font-bold text-[12px] uppercase tracking-[0.2em]">Newsletter</h4>
+              <h4 className="text-white font-bold text-[12px] uppercase tracking-[0.2em]">Newsletter</h4>
               <div className="space-y-3">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full bg-[#111827] dark:bg-[#0b1225] border border-gray-800 dark:border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-orange-500 transition-all text-white placeholder:text-gray-500"
+                <input 
+                  type="email" 
+                  placeholder="Your email address" 
+                  className="w-full bg-[#111827] border border-gray-800 rounded-xl px-4 py-3 text-sm text-white focus:border-orange-500 transition-all outline-none" 
                 />
-                <button
-                  onClick={() => window.location.href='/signup'}
-                  className="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-orange-900/40 active:scale-95 text-sm uppercase tracking-wider"
+                <Link 
+                  to="/signup"
+                  className="block w-full text-center bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-orange-900/40 active:scale-95 text-sm uppercase tracking-wider"
                 >
                   Subscribe Now
-                </button>
+                </Link>
               </div>
               <div className="flex items-center justify-center space-x-2 opacity-60">
                 <span className="h-[1px] w-4 bg-gray-600"></span>
@@ -361,28 +417,27 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800/80 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-[10px] text-gray-500 uppercase tracking-[0.25em] font-medium">
-            <p>&copy; 2025 TourEase. All rights reserved.</p>
-            <div className="flex items-center space-x-1 hover:text-white transition-colors cursor-default">
-              <span>Handcrafted with</span>
-              <span className="text-orange-500 text-sm mx-1 animate-bounce">🧡</span>
-              <span>globally</span>
+          <div className="border-t border-gray-800/80 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-[0.25em]">
+            <p>&copy; 2026 TourEase. All rights reserved.</p>
+            <div className="flex items-center">
+              Handcrafted with <span className="text-orange-500 text-sm mx-1 animate-bounce">🧡</span> globally
             </div>
           </div>
         </div>
       </footer>
     </div>
+    
   );
 }
 
 function FeatureCard({ icon, title, description, color }) {
   return (
-    <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm dark:shadow-lg hover:shadow-lg dark:hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 hover:border-teal-200 dark:hover:border-indigo-700 group">
+    <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-teal-200 group">
       <div className={`${color} w-16 h-16 rounded-lg flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}>
         {icon}
       </div>
-      <h3 className="font-bold text-xl mb-3 text-gray-900 dark:text-white">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
+      <h3 className="font-bold text-xl mb-3">{title}</h3>
+      <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -393,12 +448,12 @@ function StepCard({ number, icon, title, description, color }) {
       <div className={`${color} text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6`}>
         {number}
       </div>
-      <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm dark:shadow-lg hover:shadow-md dark:hover:shadow-xl transition-all h-full border border-transparent dark:border-gray-800">
-        <div className="bg-teal-100 dark:bg-indigo-950 text-teal-600 dark:text-indigo-300 w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-5">
+      <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all h-full">
+        <div className="bg-teal-100 text-teal-600 w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-5">
           {icon}
         </div>
-        <h3 className="font-bold text-lg mb-3 text-gray-900 dark:text-white">{title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
+        <h3 className="font-bold text-lg mb-3">{title}</h3>
+        <p className="text-gray-600 leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -406,18 +461,18 @@ function StepCard({ number, icon, title, description, color }) {
 
 function CommunityCard({ name, location, quote, trips }) {
   return (
-    <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-sm dark:shadow-lg border border-gray-100 dark:border-gray-800 hover:shadow-md dark:hover:shadow-xl transition-all">
+    <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all">
       <div className="flex items-center mb-6">
-        <div className="w-14 h-14 bg-gradient-to-br from-teal-400 to-cyan-500 dark:from-indigo-500 dark:to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+        <div className="w-14 h-14 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
           {name.charAt(0)}
         </div>
         <div>
-          <h4 className="font-semibold text-lg text-gray-900 dark:text-white">{name}</h4>
-          <p className="text-sm text-gray-500 dark:text-gray-400">{location}</p>
+          <h4 className="font-semibold text-lg">{name}</h4>
+          <p className="text-sm text-gray-500">{location}</p>
         </div>
       </div>
-      <p className="text-gray-600 dark:text-gray-300 mb-6 italic leading-relaxed">"{quote}"</p>
-      <div className="flex items-center text-sm text-teal-600 dark:text-indigo-400 font-semibold">
+      <p className="text-gray-600 mb-6 italic leading-relaxed">"{quote}"</p>
+      <div className="flex items-center text-sm text-teal-600 font-semibold">
         <MapPin className="w-5 h-5 mr-2" />
         {trips}
       </div>
