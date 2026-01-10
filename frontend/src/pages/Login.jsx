@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { api } from "../services/api";
@@ -14,7 +14,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [success, setSuccess] = useState(false);
-   
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -137,7 +137,7 @@ export default function Login() {
 
         <div className="relative mb-6">
         </div>
-         {/* GOOGLE LOGIN */}
+        {/* GOOGLE LOGIN */}
         <button
           onClick={handleGoogleLogin}
           className="w-full mb-6 flex items-center justify-center gap-3 border border-gray-300 py-3 rounded-lg hover:bg-gray-50 transition"
@@ -174,11 +174,10 @@ export default function Login() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
-                  errors.email
+                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${errors.email
                     ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
                     : "border-gray-300 dark:border-gray-700"
-                }`}
+                  }`}
                 placeholder="you@example.com"
               />
             </div>
@@ -202,11 +201,10 @@ export default function Login() {
                 required
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
-                  errors.password
+                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${errors.password
                     ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
                     : "border-gray-300 dark:border-gray-700"
-                }`}
+                  }`}
                 placeholder="••••••••"
               />
               <button

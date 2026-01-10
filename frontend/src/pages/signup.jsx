@@ -190,11 +190,10 @@ export default function Signup() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
-                  errors.name
+                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${errors.name
                     ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
                     : "border-gray-300 dark:border-gray-700"
-                }`}
+                  }`}
                 placeholder="John Doe"
               />
             </div>
@@ -218,11 +217,10 @@ export default function Signup() {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
-                  errors.email
+                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${errors.email
                     ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
                     : "border-gray-300 dark:border-gray-700"
-                }`}
+                  }`}
                 placeholder="you@example.com"
               />
             </div>
@@ -245,11 +243,10 @@ export default function Signup() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
-                  errors.phone
+                className={`w-full pl-10 pr-3 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${errors.phone
                     ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
                     : "border-gray-300 dark:border-gray-700"
-                }`}
+                  }`}
                 placeholder="+1 (555) 123-4567"
               />
             </div>
@@ -273,11 +270,10 @@ export default function Signup() {
                 required
                 value={formData.password}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
-                  errors.password
+                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${errors.password
                     ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
                     : "border-gray-300 dark:border-gray-700"
-                }`}
+                  }`}
                 placeholder="••••••••"
               />
               <button
@@ -312,11 +308,10 @@ export default function Signup() {
                 required
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${
-                  errors.confirmPassword
+                className={`w-full pl-10 pr-10 py-3 border rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-teal-500 dark:focus:ring-indigo-400 focus:border-teal-500 dark:focus:border-indigo-400 ${errors.confirmPassword
                     ? "border-red-300 bg-red-50 dark:border-red-900 dark:bg-red-950"
                     : "border-gray-300 dark:border-gray-700"
-                }`}
+                  }`}
                 placeholder="••••••••"
               />
               <button
