@@ -61,10 +61,10 @@ export default function Home() {
                 >
                   Start Your Journey
                 </Link>
-
-                <Link
-                  to="/explore"
-                  className="px-8 py-3.5 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10 rounded-xl font-bold transition-all duration-300 active:scale-95 text-md flex items-center justify-center min-w-[180px]"
+                
+                <Link 
+                  to="/destinations" 
+                  className="px-8 py-3.5 bg-white/5 border border-white/10 backdrop-blur-md text-white hover:bg-white/10 rounded-xl font-bold transition-all duration-300 active:scale-95 text-md flex items-center justify-center min-w-[180px]"
                 >
                   Explore Features
                 </Link>
