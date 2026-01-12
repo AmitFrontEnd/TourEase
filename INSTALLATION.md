@@ -43,11 +43,16 @@ npm install -g nodemon vite
 Create a `.env` file in the root directory and add your credentials:
 ```Code snippet
 MONGODB_URI=your_mongodb_connection_string
+MONGODB_URL=your_mongodb_connection_string
 PORT=3000
+FRONTEND_URL=http://localhost:5173
+# For production, set FRONTEND_URL to your deployed frontend URL
 # Add other keys like API tokens below as needed
 ```
 
 > **Note: Never commit your `.env` file to GitHub. It is already included in `.gitignore`.**
+> 
+> **Important:** The code supports both `MONGODB_URI` and `MONGODB_URL` for compatibility. Use either one.
 
 ### 5. Running the Project
 You will need two terminals open:
