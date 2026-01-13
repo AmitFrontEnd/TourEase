@@ -111,7 +111,9 @@ Joining us for **SWOC'26**? We love PRs! 🚀
 ---
 ## 👥 Contributors
 
+<p style="font-weight: normal;">
 Thanks to all the amazing people who have contributed to TourEase !💜
+</p>
 <a href="https://github.com/Suhani1234-5/TourEase/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Suhani1234-5/TourEase" />
 </a>
