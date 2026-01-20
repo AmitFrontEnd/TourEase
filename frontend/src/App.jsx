@@ -27,6 +27,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./components/NotFound";
 import TripPlanner from './pages/TripPlanner';
+import Footer from "./components/Footer";
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = Boolean(localStorage.getItem("token"));
@@ -75,6 +76,7 @@ function AppRoutes() {
           <Route path="/trip-planner" element={<TripPlanner />} />
         </Routes>
       </div>
+      {showNavigation && <Footer />}
     </>
   );
 }
